@@ -1,0 +1,10 @@
+data_url = 'http://hilpisch.com/tr_eikon_eod_data.csv'
+!conda install requests
+import requests
+requests.get(data_url)
+requests.get(data_url).text
+dataIn = requests.get(data_url).text
+dataIn
+dataIn[:5]
+dataIn
+%history -f cqf.2

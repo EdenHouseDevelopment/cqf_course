@@ -1,0 +1,25 @@
+url_addr = 'http://hilpisch.com/tr_eikon_eod_data.csv'
+import requests
+raw = requests.get(data_url).text
+raw = requests.get(url_addr).text
+with open('data.csv','w') as f:
+    f.writelines(raw)
+import csv
+csv_reader = csv.reader(open('data.csv','r'))
+data = [row for row in csv_reader]
+data
+dates = [datetime.datetime.fromisoformat(row[0]) for row in data[1:]]
+imprt datetime
+import datetime
+dates = [datetime.datetime.fromisoformat(row[0]) for row in data[1:]]
+dates[:3]
+data = [row for row in data if len(row[1]) > 0]
+len(data)
+dates = [datetime.datetime.fromisoformat(row[0]) for row in data[1:]]
+prices = [float(row[1]) for row in data[1:]]
+import pylab as plt
+plt.plot(prices)
+plt.show()
+plt.plot(dates,prices)
+plt.show()
+%history -f plotting
